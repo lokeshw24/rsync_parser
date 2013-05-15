@@ -1,0 +1,34 @@
+WHAT THE CODE DOES :
+----------------------
+	>While using 'rsync' command to copy files locally, same files may exist at destination path. 
+	>So in this code, we use the "dry-run" option of rsync command, parse the output, and inform the user if same file exist at destination path.
+	>For doing the parsing of the output, I have used lex.
+
+USAGE :
+--------
+	$bash bash_rsync_parser.sh <source_path> <dest_path>
+
+EXAMPLES : 
+-----------
+	0. $bash bash_rsync_parser.sh ~/a/file1 ~/b
+	1. $bash bash_rsync_parser.sh ~/a/file1 ~/a/file2 ~/a/file3 ~/b
+	2. $bash bash_rsync_parser.sh ~/a/* ~/b
+
+HIERARCHY :
+-------------
+	>bash_rsync_parser.sh   : main bash code.
+	>parser.lex 		: flex code that does parsing of output of rsync "-i" option.
+	>flex_run_script.sh 	: run this script after if you change the parser.lex file
+	>lex.yy.c 		: output of parser.lex 
+	>notes.c 		: IGNORE this file
+
+LICENSE : 
+-----------
+GNU General Public License, Version 3.
+For detailed license, visit : <http://www.gnu.org/licenses/gpl.html>
+
+AUTHOR :
+----------
+Lokesh Walase <flokeshw24@gmail.com>
+
+

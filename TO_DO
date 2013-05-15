@@ -1,0 +1,3 @@
+>Right now only bothered if at the destination, the same file with different "size" or "modification time" exists.We can check for many other different attributes too, for eg, owner of files are different etc. Read "-i" option in man page of rsync.
+
+>No testing done for copying files over network.
